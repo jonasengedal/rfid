@@ -9,5 +9,5 @@ Accept: application/json
 }
 
 ###
-GET http://localhost:7264/api/rfid HTTP/1.1
+GET http://localhost:7264/api/rfid/56dd95a6-9060-407d-b796-9db343090213 HTTP/1.1
 Accept: application/json

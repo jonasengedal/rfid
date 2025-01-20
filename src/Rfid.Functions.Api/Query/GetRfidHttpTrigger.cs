@@ -1,22 +1,18 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Logging;
+using Rfid.Core.Rfid;
 
 namespace Rfid.Functions.Api.Query
 {
-    public class GetRfidHttpTrigger(ILogger<GetRfidHttpTrigger> logger)
+    public class GetRfidHttpTrigger(IRfidService rfidService)
     {
         [Function(nameof(GetRfidHttpTrigger))]
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "rfid")] HttpRequest req)
+        public async Task<IActionResult> RunAsync(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "rfid/{id:guid}")] HttpRequest req, Guid id)
         {
-            logger.LogInformation("Get Rfid.");
-            DateTime utcNow = DateTime.UtcNow;
-            return new OkObjectResult(value: new Core.Rfid.Rfid
-            {
-                ValidFrom = DateOnly.FromDateTime(utcNow),
-                ValidTo = DateOnly.FromDateTime(utcNow.AddDays(14))
-            });
+            var rfid = await rfidService.GetAsync(id);
+            return new OkObjectResult(rfid);
         }
     }
 }
