@@ -16,6 +16,7 @@ internal sealed class RfidService(
         DateTime utcNow = DateTime.UtcNow;
         return Task.FromResult(new Rfid
         {
+            Id = id,
             ValidFrom = DateOnly.FromDateTime(utcNow),
             ValidTo = DateOnly.FromDateTime(utcNow.AddDays(14))
         });
