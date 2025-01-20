@@ -13,6 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{102BDD3F-9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Core.Tests", "test\Rfid.Core.Tests\Rfid.Core.Tests.csproj", "{40815D7B-BE9B-45EF-9827-763A309FAC73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Functions.Api", "src\Rfid.Functions.Api\Rfid.Functions.Api.csproj", "{7FEAE015-783A-4D4F-9002-70B00C03A236}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{A60016C0-0FC3-4EB0-BC74-3DA41EB6D508}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{10B822C3-3DAE-4CF8-9D57-D88864331CF1}"
+	ProjectSection(SolutionItems) = preProject
+		http\rfid.http = http\rfid.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +44,10 @@ Global
 		{40815D7B-BE9B-45EF-9827-763A309FAC73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40815D7B-BE9B-45EF-9827-763A309FAC73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40815D7B-BE9B-45EF-9827-763A309FAC73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +56,6 @@ Global
 		{D2B28542-3293-4E77-B690-A82FE7D5AE37} = {D266A36F-A92D-4480-8C03-860409957B24}
 		{B0E8820F-75B5-47E0-80F8-C6B4096A5E1F} = {D266A36F-A92D-4480-8C03-860409957B24}
 		{40815D7B-BE9B-45EF-9827-763A309FAC73} = {102BDD3F-9265-4866-8E87-6318AFBCF8D6}
+		{7FEAE015-783A-4D4F-9002-70B00C03A236} = {D266A36F-A92D-4480-8C03-860409957B24}
 	EndGlobalSection
 EndGlobal
