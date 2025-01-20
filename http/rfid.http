@@ -1,2 +1,13 @@
-GET http://localhost:7264/api/GetRfidHttpTrigger HTTP/1.1
+@currentDate = {{$datetime 'yyyy-MM-dd'}}
+
+POST http://localhost:7264/api/rfid HTTP/1.1
+Accept: application/json
+
+{
+    "id": "{{$guid}}",
+    "validFrom": "{{currentDate}}"
+}
+
+###
+GET http://localhost:7264/api/rfid HTTP/1.1
 Accept: application/json
