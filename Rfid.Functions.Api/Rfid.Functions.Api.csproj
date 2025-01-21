@@ -16,6 +16,8 @@
     <PackageReference Include="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inc.Azure.CosmosDb\Inc.Azure.CosmosDb.csproj" />
+    <ProjectReference Include="..\Rfid.Application\Rfid.Application.csproj" />
     <ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
     <ProjectReference Include="..\Rfid.Infrastructure\Rfid.Infrastructure.csproj" />
   </ItemGroup>

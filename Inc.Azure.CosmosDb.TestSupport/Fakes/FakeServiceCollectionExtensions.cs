@@ -1,13 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Rfid.Core.Interfaces;
+﻿using Inc.Azure.CosmosDb.Abstractions;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Rfid.Infrastructure.TestSupport.Fakes;
+namespace Inc.Azure.CosmosDb.TestSupport.Fakes;
 
 public static class FakeServiceCollectionExtensions
 {
-    public static IServiceCollection AddFakeRfidRepository(this IServiceCollection services)
+    public static IServiceCollection AddFakeCosmosDbRepository(this IServiceCollection services)
     {
-        services.AddFake(typeof(IRfidRepository), typeof(RfidRepositoryFake));
+        services.AddFake(typeof(ICosmosDbRepository<>), typeof(CosmosDbRepositoryFake<>));
         return services;
     }
 

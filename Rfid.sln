@@ -25,7 +25,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{10B822C3-3
 		http\rfid.http = http\rfid.http
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Infrastructure.TestSupport", "Rfid.Infrastructure.TestSupport\Rfid.Infrastructure.TestSupport.csproj", "{F960204A-575C-4563-A3D7-9F8E2DC59346}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inc.Azure.CosmosDb.Abstractions", "Inc.Azure.CosmosDb.Abstractions\Inc.Azure.CosmosDb.Abstractions.csproj", "{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inc.Azure.CosmosDb", "Inc.Azure.CosmosDb\Inc.Azure.CosmosDb.csproj", "{49D22858-C914-4DFC-858C-0590C66C4D18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inc.Azure.CosmosDb.TestSupport", "Inc.Azure.CosmosDb.TestSupport\Inc.Azure.CosmosDb.TestSupport.csproj", "{136DA199-A515-4641-B11C-0A0B4D2FC77E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Infrastructure.TestSupport", "Rfid.Infrastructure.TestSupport\Rfid.Infrastructure.TestSupport.csproj", "{F75DC550-4620-42D9-A26F-ECFCD23CE372}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inc.SharedKernel", "Inc.SharedKernel\Inc.SharedKernel.csproj", "{AD7D158A-D679-416B-87BE-79017E766979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Infrastructure.Tests", "Rfid.Infrastructure.Tests\Rfid.Infrastructure.Tests.csproj", "{DA0BDF9A-AB4B-4164-B88B-C721142C57EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inc.TestSupport", "Inc.TestSupport\Inc.TestSupport.csproj", "{2F37F753-D371-4C36-B932-05E17583346A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Application", "Rfid.Application\Rfid.Application.csproj", "{85D45927-6204-417B-B3FD-580755FC8EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Application.Tests", "Rfid.Application.Tests\Rfid.Application.Tests.csproj", "{7C3738FA-7581-4644-AFB5-C8869E8224EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inc.Shared", "Inc.Shared", "{C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,12 +67,51 @@ Global
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D22858-C914-4DFC-858C-0590C66C4D18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D22858-C914-4DFC-858C-0590C66C4D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D22858-C914-4DFC-858C-0590C66C4D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D22858-C914-4DFC-858C-0590C66C4D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136DA199-A515-4641-B11C-0A0B4D2FC77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136DA199-A515-4641-B11C-0A0B4D2FC77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136DA199-A515-4641-B11C-0A0B4D2FC77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136DA199-A515-4641-B11C-0A0B4D2FC77E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75DC550-4620-42D9-A26F-ECFCD23CE372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75DC550-4620-42D9-A26F-ECFCD23CE372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75DC550-4620-42D9-A26F-ECFCD23CE372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75DC550-4620-42D9-A26F-ECFCD23CE372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7D158A-D679-416B-87BE-79017E766979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7D158A-D679-416B-87BE-79017E766979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7D158A-D679-416B-87BE-79017E766979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7D158A-D679-416B-87BE-79017E766979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA0BDF9A-AB4B-4164-B88B-C721142C57EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA0BDF9A-AB4B-4164-B88B-C721142C57EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA0BDF9A-AB4B-4164-B88B-C721142C57EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA0BDF9A-AB4B-4164-B88B-C721142C57EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F37F753-D371-4C36-B932-05E17583346A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F37F753-D371-4C36-B932-05E17583346A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F37F753-D371-4C36-B932-05E17583346A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F37F753-D371-4C36-B932-05E17583346A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85D45927-6204-417B-B3FD-580755FC8EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85D45927-6204-417B-B3FD-580755FC8EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85D45927-6204-417B-B3FD-580755FC8EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85D45927-6204-417B-B3FD-580755FC8EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3738FA-7581-4644-AFB5-C8869E8224EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3738FA-7581-4644-AFB5-C8869E8224EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3738FA-7581-4644-AFB5-C8869E8224EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3738FA-7581-4644-AFB5-C8869E8224EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7C43D55-B661-4EF2-A0DE-E9E58EC3265A} = {C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}
+		{49D22858-C914-4DFC-858C-0590C66C4D18} = {C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}
+		{136DA199-A515-4641-B11C-0A0B4D2FC77E} = {C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}
+		{AD7D158A-D679-416B-87BE-79017E766979} = {C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}
+		{2F37F753-D371-4C36-B932-05E17583346A} = {C53A80F4-8D90-4178-B2A8-4CAB7BE66D20}
 	EndGlobalSection
 EndGlobal

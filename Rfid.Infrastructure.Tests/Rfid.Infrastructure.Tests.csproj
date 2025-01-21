@@ -1,23 +1,25 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+
     <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" />
-	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
-	<PackageReference Include="Microsoft.Extensions.Logging" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
-    <PackageReference Include="Shouldly" />
-    <PackageReference Include="xunit" />
+	<PackageReference Include="Shouldly" />
+	<PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Inc.Azure.CosmosDb.TestSupport\Inc.Azure.CosmosDb.TestSupport.csproj" />
     <ProjectReference Include="..\Inc.TestSupport\Inc.TestSupport.csproj" />
     <ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
+    <ProjectReference Include="..\Rfid.Infrastructure\Rfid.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

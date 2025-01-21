@@ -6,11 +6,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Azure.Cosmos" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Inc.SharedKernel\Inc.SharedKernel.csproj" />
-		<ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
+	  <ProjectReference Include="..\Inc.Azure.CosmosDb.Abstractions\Inc.Azure.CosmosDb.Abstractions.csproj" />
 	</ItemGroup>
-
 </Project>

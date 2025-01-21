@@ -720,6 +720,9 @@
           "System.Drawing.Common": "6.0.0"
         }
       },
+      "inc.sharedkernel": {
+        "type": "Project"
+      },
       "rfid.core": {
         "type": "Project",
         "dependencies": {
