@@ -17,6 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
+    <ProjectReference Include="..\Rfid.Infrastructure\Rfid.Infrastructure.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

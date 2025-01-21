@@ -1,6 +1,7 @@
 @currentDate = {{$datetime 'yyyy-MM-dd'}}
+@baseUrl=http://localhost:7264
 
-POST http://localhost:7264/api/rfid HTTP/1.1
+POST {{baseUrl}}/api/rfid HTTP/1.1
 Accept: application/json
 
 {
@@ -9,5 +10,5 @@ Accept: application/json
 }
 
 ###
-GET http://localhost:7264/api/rfid/56dd95a6-9060-407d-b796-9db343090213 HTTP/1.1
+GET {{baseUrl}}/api/rfid/490efc44-7e83-4d99-9516-d1d1a88321f0 HTTP/1.1
 Accept: application/json

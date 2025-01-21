@@ -1,4 +1,4 @@
-﻿namespace Rfid.Core;
+﻿namespace Rfid.Core.Models;
 
 public sealed class Rfid
 {

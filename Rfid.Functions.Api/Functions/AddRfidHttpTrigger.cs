@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Newtonsoft.Json;
-using Rfid.Core;
+using Rfid.Core.Services;
 
 namespace Rfid.Functions.Api.Functions;
 
@@ -12,7 +12,7 @@ public class AddRfidHttpTrigger(IRfidService rfidService)
     public async Task<IActionResult> Run(
          [HttpTrigger(AuthorizationLevel.Function, "post", Route = "rfid")] HttpRequest request)
     {
-        var rfid = await BodyToItem<Core.Rfid>(request);
+        var rfid = await BodyToItem<Core.Models.Rfid>(request);
 
         rfid = await rfidService.AddAsync(rfid);
 

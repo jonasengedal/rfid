@@ -1,5 +1,6 @@
 ﻿using AutoFixture;
 using Microsoft.Extensions.DependencyInjection;
+using Rfid.Core.Entities;
 
 namespace Rfid.Core.Tests;
 
@@ -19,6 +20,7 @@ internal class TestContext
 
         _fixture = new Fixture();
         _fixture.Register(() => DateOnly.FromDateTime(_fixture.Create<DateTime>()));
+        _fixture.Customize<RfidEntity>(c => c.With(r => r.Id, _fixture.Create<Guid>().ToString()));
     }
 
     public T Resolve<T>() where T : notnull

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Rfid.Core;
+namespace Rfid.Core.Services;
 
 public static class RfidServiceCollectionExtensions
 {

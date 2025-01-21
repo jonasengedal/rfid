@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
+    <ProjectReference Include="..\Rfid.Infrastructure.TestSupport\Rfid.Infrastructure.TestSupport.csproj" />
   </ItemGroup>
 
   <ItemGroup>
