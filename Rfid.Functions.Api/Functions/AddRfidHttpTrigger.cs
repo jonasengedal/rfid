@@ -14,7 +14,7 @@ public class AddRfidHttpTrigger(IRfidService rfidService)
     {
         var rfid = await BodyToItem<Core.Models.Rfid>(request);
 
-        rfid = await rfidService.AddAsync(rfid);
+        rfid = await rfidService.AddAsync(rfid).ConfigureAwait(false);
 
         return new OkObjectResult(rfid);
     }
@@ -22,7 +22,7 @@ public class AddRfidHttpTrigger(IRfidService rfidService)
     // TODO: Get built in deserialization to work
     private static async Task<T> BodyToItem<T>(HttpRequest request)
     {
-        var requestBody = await new StreamReader(request.Body).ReadToEndAsync();
+        var requestBody = await new StreamReader(request.Body).ReadToEndAsync().ConfigureAwait(false);
 
         var item = JsonConvert.DeserializeObject<T>(requestBody)
          ?? throw new ArgumentException("Payload could not be deserialized");

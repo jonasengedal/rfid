@@ -18,7 +18,7 @@ internal sealed class RfidService(
 
     public async Task<Models.Rfid> GetAsync(Guid id)
     {
-        var rfidEntity = await repository.GetAsync(id.ToString());
+        var rfidEntity = await repository.GetAsync(id.ToString()).ConfigureAwait(false);
         return CoreMapper.MapToDomain(rfidEntity);
     }
 }
