@@ -1,6 +1,6 @@
 using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.Hosting;
-using Rfid.Core.Rfid;
+using Rfid.Core;
 
 var builder = FunctionsApplication.CreateBuilder(args);
 builder.Services.AddRfid();

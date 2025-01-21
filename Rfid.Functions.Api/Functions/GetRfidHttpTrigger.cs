@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
-using Rfid.Core.Rfid;
+using Rfid.Core;
 
-namespace Rfid.Functions.Api.Query
+namespace Rfid.Functions.Api.Functions
 {
     public class GetRfidHttpTrigger(IRfidService rfidService)
     {

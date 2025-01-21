@@ -1,7 +1,7 @@
 ﻿using AutoFixture;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Initial.Core.Tests;
+namespace Rfid.Core.Tests;
 
 internal class TestContext
 {

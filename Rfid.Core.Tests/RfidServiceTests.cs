@@ -1,8 +1,6 @@
-using Initial.Core.Tests;
-using Rfid.Core.Rfid;
 using Shouldly;
 
-namespace Rfid.Core.Tests.Rfid;
+namespace Rfid.Core.Tests;
 
 public sealed class RfidServiceTests
 {
@@ -24,7 +22,7 @@ public sealed class RfidServiceTests
     internal async Task GIVEN_ValidRfid_WHEN_AddAsync_THEN_RfidIsSaved()
     {
         // GIVEN
-        var inputRfid = _testContext.Create<Core.Rfid.Rfid>();
+        var inputRfid = _testContext.Create<Rfid>();
 
         // WHEN
         var addedRfid = await rfidService.AddAsync(inputRfid);

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace Rfid.Core.Rfid;
+namespace Rfid.Core;
 internal sealed class RfidService(
     ILogger<RfidService> logger) : IRfidService
 {

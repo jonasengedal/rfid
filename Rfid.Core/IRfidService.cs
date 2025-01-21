@@ -1,4 +1,4 @@
-﻿namespace Rfid.Core.Rfid;
+﻿namespace Rfid.Core;
 
 public interface IRfidService
 {
