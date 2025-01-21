@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "http", "http", "{10B822C3-3
 		http\rfid.http = http\rfid.http
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rfid.Infrastructure.TestSupport", "Rfid.Infrastructure.TestSupport\Rfid.Infrastructure.TestSupport.csproj", "{F960204A-575C-4563-A3D7-9F8E2DC59346}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FEAE015-783A-4D4F-9002-70B00C03A236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F960204A-575C-4563-A3D7-9F8E2DC59346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
