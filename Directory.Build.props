@@ -1,0 +1,29 @@
+<Project>
+    <!-- build settings applying to all projects -->
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+        <TreatWarningsAsErrors Condition="'$(TreatWarningsAsErrorsEnabled)' == 'false'">True</TreatWarningsAsErrors>
+        <Nullable>enable</Nullable>
+        <NuGetAuditMode>direct</NuGetAuditMode>
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+	    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+
+    <Choose>
+        <When Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+            <!-- build settings applying only to unit test projects -->
+            <PropertyGroup />
+        </When>
+        <Otherwise>
+            <!-- build settings applying to all other projects -->
+            <PropertyGroup>
+                <GenerateDocumentationFile>True</GenerateDocumentationFile>
+            </PropertyGroup>
+            <PropertyGroup>
+                <!-- public types require xml doc warning disabled -->
+                <NoWarn>CS1591</NoWarn>
+            </PropertyGroup>
+        </Otherwise>
+    </Choose>
+</Project>
