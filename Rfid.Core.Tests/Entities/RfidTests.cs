@@ -1,7 +1,7 @@
 using Inc.TestSupport;
 using Shouldly;
 
-namespace Rfid.Core.Tests.Folder;
+namespace Rfid.Core.Tests.Entities;
 
 public sealed class RfidTests
 {
@@ -16,7 +16,7 @@ public sealed class RfidTests
     internal void GIVEN_WHEN_RfidConstructed_THEN_RfidIdIsNotEmpty()
     {
         // GIVEN WHEN
-        var rfid = _testContext.Create<Entities.Rfid>();
+        var rfid = _testContext.Create<Core.Entities.Rfid>();
 
         // THEN
         rfid.ShouldNotBeNull();

@@ -1,5 +1,5 @@
 using System.Collections.Concurrent;
-using Inc.SharedKernel.Interfaces;
+using Inc.SharedKernel.Exceptions;
 using Newtonsoft.Json;
 using Rfid.Core.Interfaces;
 
