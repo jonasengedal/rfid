@@ -29,7 +29,7 @@ public sealed class RfidServiceTests
     internal async Task GIVEN_ValidRfid_WHEN_AddAsync_THEN_RfidIsSaved()
     {
         // GIVEN
-        var inputRfid = _testContext.Create<Core.Entities.Rfid>();
+        var inputRfid = new Core.Entities.Rfid();
 
         // WHEN
         var addedRfid = await rfidService.AddAsync(inputRfid);
@@ -61,6 +61,6 @@ public sealed class RfidServiceTests
 
     private async Task<Core.Entities.Rfid> AddRfidAsync(Core.Entities.Rfid? rfid = null)
     {
-        return await rfidService.AddAsync(rfid ?? _testContext.Create<Core.Entities.Rfid>());
+        return await rfidService.AddAsync(rfid ?? new Core.Entities.Rfid());
     }
 }

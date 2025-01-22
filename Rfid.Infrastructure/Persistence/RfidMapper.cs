@@ -15,10 +15,10 @@ internal partial class RfidMapper
     public static Core.Entities.Rfid MapToDomain(RfidEntity insertedRfid)
     {
         return new Core.Entities.Rfid
-        {
-            Id = Guid.Parse(insertedRfid.Id),
-            ValidFrom = insertedRfid.ValidFrom,
-            ValidTo = insertedRfid.ValidTo
-        };
+        (
+            Guid.Parse(insertedRfid.Id),
+            insertedRfid.ValidFrom,
+            insertedRfid.ValidTo
+        );
     }
 }

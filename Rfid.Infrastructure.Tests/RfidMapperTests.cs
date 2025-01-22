@@ -16,7 +16,7 @@ public sealed class RfidMapperTests
     internal void GIVEN_Rfid_WHEN_MapToEntity_THEN_RfidEntityIsReturned()
     {
         // GIVEN
-        var rfid = testContext.Create<Core.Entities.Rfid>();
+        var rfid = new Core.Entities.Rfid();
 
         // WHEN
         var rfidEntity = RfidMapper.MapToEntity(rfid);

@@ -62,6 +62,6 @@ public sealed class RfidRepositoryTests
 
     private async Task<Core.Entities.Rfid> AddRfidAsync(Core.Entities.Rfid? rfid = null)
     {
-        return await rfidRepository.InsertAsync(rfid ?? _testContext.Create<Core.Entities.Rfid>());
+        return await rfidRepository.InsertAsync(rfid ?? new Core.Entities.Rfid());
     }
 }

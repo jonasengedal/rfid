@@ -13,13 +13,58 @@ public sealed class RfidTests
     }
 
     [Fact]
-    internal void GIVEN_WHEN_RfidConstructed_THEN_RfidIdIsNotEmpty()
+    internal void Given_NoParams_When_RfidConstructed_THEN_OnlyIdIsSet()
     {
         // GIVEN WHEN
-        var rfid = _testContext.Create<Core.Entities.Rfid>();
+        var rfid = new Core.Entities.Rfid();
+    }
+
+    [Fact]
+    internal void GIVEN_AllParams_WHEN_RfidConstructed_THEN_AllPropsAreSet()
+    {
+        // GIVEN
+        var id = _testContext.Create<Guid>();
+        var utcNow = DateTime.UtcNow;
+        var validFrom = DateOnly.FromDateTime(utcNow);
+        var validTo = DateOnly.FromDateTime(utcNow.AddDays(1));
+        
+        // WHEN
+        var rfid = new Core.Entities.Rfid(id, validFrom, validTo);
 
         // THEN
-        rfid.ShouldNotBeNull();
-        rfid.Id.ShouldNotBe(Guid.Empty);
+        rfid.ShouldSatisfyAllConditions(
+            () => rfid.Id.ShouldBe(id),
+            () => rfid.ValidFrom.ShouldBe(validFrom),
+            () => rfid.ValidTo.ShouldBe(validTo)
+            );
+    }
+
+    [Fact]
+    internal void GIVEN_EmptyId_WHEN_RfidConstructed_THEN_ArgumentExceptionThrow()
+    {
+        // GIVEN WHEN
+        Should.Throw<ArgumentException>(() => new Core.Entities.Rfid(Guid.Empty));
+    }
+
+    [Fact]
+    internal void GIVEN_NoValidTo_WHEN_RfidConstructed_THEN_ValidToIsSetToCurrentDate()
+    {
+        // GIVEN WHEN
+        var rfid = new Core.Entities.Rfid(Guid.NewGuid());
+
+        // THEN
+        rfid.ValidFrom.ShouldNotBeNull();
+        rfid.ValidFrom.Value.ShouldBe(DateOnly.FromDateTime(DateTime.UtcNow));
+    }
+
+    [Fact]
+    internal void GIVEN_ValidToBeforeValidFrom_When_RfidConstructed_THEN_ArgumentExceptionThrown()
+    {
+        // GIVEN
+        var validFrom = DateOnly.FromDateTime(DateTime.UtcNow);
+        var validTo = validFrom.AddDays(-1);
+
+        // WHEN
+        Should.Throw<ArgumentException>(() => new Core.Entities.Rfid(Guid.NewGuid(), validFrom, validTo));
     }
 }
