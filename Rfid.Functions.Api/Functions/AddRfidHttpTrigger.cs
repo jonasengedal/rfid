@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Newtonsoft.Json;
+using Rfid.Application.Dtos;
 using Rfid.Application.Services;
 
 namespace Rfid.Functions.Api.Functions;
@@ -12,11 +13,11 @@ public class AddRfidHttpTrigger(IRfidService rfidService)
     public async Task<IActionResult> Run(
          [HttpTrigger(AuthorizationLevel.Function, "post", Route = "rfid")] HttpRequest request)
     {
-        var rfid = await BodyToItem<Core.Entities.Rfid>(request);
+        var createRfidRequest = await BodyToItem<CreateRfidRequest>(request);
 
-        rfid = await rfidService.AddAsync(rfid).ConfigureAwait(false);
+        var rfidResponse = await rfidService.AddAsync(createRfidRequest).ConfigureAwait(false);
 
-        return new OkObjectResult(rfid);
+        return new OkObjectResult(rfidResponse);
     }
 
     // TODO: Get built in deserialization to work

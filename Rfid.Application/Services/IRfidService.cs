@@ -1,7 +1,9 @@
-﻿namespace Rfid.Application.Services;
+﻿using Rfid.Application.Dtos;
+
+namespace Rfid.Application.Services;
 
 public interface IRfidService
 {
-    Task<Core.Entities.Rfid> AddAsync(Core.Entities.Rfid rfid);
-    Task<Core.Entities.Rfid> GetAsync(Guid id);
+    Task<RfidResponse> AddAsync(CreateRfidRequest rfid);
+    Task<RfidResponse> GetAsync(Guid id);
 }

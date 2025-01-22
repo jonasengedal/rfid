@@ -1,6 +1,6 @@
 using Microsoft.Azure.Cosmos;
 
-namespace Rfid.Infrastructure.Persistence.CosmosDb;
+namespace Inc.Azure.CosmosDb;
 
 public class CosmosDbContainerProvider
 {

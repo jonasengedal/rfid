@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Rfid.Core\Rfid.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dtos\" />
-  </ItemGroup>
-
 </Project>

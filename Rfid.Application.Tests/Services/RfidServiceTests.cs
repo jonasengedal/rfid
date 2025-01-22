@@ -1,4 +1,5 @@
 using Inc.TestSupport;
+using Rfid.Application.Dtos;
 using Rfid.Application.Services;
 using Rfid.Core.Interfaces;
 using Rfid.Infrastructure.TestSupport.Fakes;
@@ -29,18 +30,17 @@ public sealed class RfidServiceTests
     internal async Task GIVEN_ValidRfid_WHEN_AddAsync_THEN_RfidIsSaved()
     {
         // GIVEN
-        var inputRfid = new Core.Entities.Rfid();
+        var inputRfid = new CreateRfidRequest();
 
         // WHEN
         var addedRfid = await rfidService.AddAsync(inputRfid);
 
         // THEN
         addedRfid.ShouldNotBeNull();
-        addedRfid.ShouldNotBe(inputRfid);
 
         var persistedRfid = await repository.GetAsync(addedRfid.Id);
         persistedRfid.ShouldNotBeNull();
-        persistedRfid!.Id.ShouldBe(inputRfid.Id);
+        persistedRfid.Id.ShouldNotBe(Guid.Empty);
     }
 
     [Fact]
@@ -59,8 +59,8 @@ public sealed class RfidServiceTests
 
     // TOOD: Test unhappy paths
 
-    private async Task<Core.Entities.Rfid> AddRfidAsync(Core.Entities.Rfid? rfid = null)
+    private async Task<RfidResponse> AddRfidAsync(CreateRfidRequest? rfid = null)
     {
-        return await rfidService.AddAsync(rfid ?? new Core.Entities.Rfid());
+        return await rfidService.AddAsync(rfid ?? new CreateRfidRequest());
     }
 }

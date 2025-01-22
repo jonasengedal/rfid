@@ -1,3 +1,4 @@
+using Inc.Azure.CosmosDb;
 using Inc.Azure.CosmosDb.Abstractions;
 using Microsoft.Azure.Cosmos;
 

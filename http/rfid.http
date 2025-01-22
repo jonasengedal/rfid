@@ -1,6 +1,25 @@
 @currentDate = {{$datetime 'yyyy-MM-dd'}}
 @baseUrl=http://localhost:7264
 
+### No Id
+
+POST {{baseUrl}}/api/rfid HTTP/1.1
+Accept: application/json
+
+{
+}
+
+### No ValidFrom and ValidTo
+
+POST {{baseUrl}}/api/rfid HTTP/1.1
+Accept: application/json
+
+{
+    "id": "{{$guid}}"
+}
+
+### No ValidTo
+
 POST {{baseUrl}}/api/rfid HTTP/1.1
 Accept: application/json
 
@@ -9,6 +28,7 @@ Accept: application/json
     "validFrom": "{{currentDate}}"
 }
 
-###
+### Get
+
 GET {{baseUrl}}/api/rfid/490efc44-7e83-4d99-9516-d1d1a88321f0 HTTP/1.1
 Accept: application/json

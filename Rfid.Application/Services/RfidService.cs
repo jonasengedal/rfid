@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Rfid.Application.Dtos;
 using Rfid.Core.Interfaces;
 
 namespace Rfid.Application.Services;
@@ -6,18 +7,19 @@ internal sealed class RfidService(
     IRfidRepository repository,
     ILogger<RfidService> logger) : IRfidService
 {
-    public async Task<Core.Entities.Rfid> AddAsync(Core.Entities.Rfid rfid)
+    public async Task<RfidResponse> AddAsync(CreateRfidRequest createRfidRequest)
     {
+        var rfid = RfidDtoMapper.MapToDomain(createRfidRequest);
         var insertedRfid = await repository.InsertAsync(rfid).ConfigureAwait(false);
 
         logger.LogInformation("Added RFID: {RFID}", insertedRfid.Id);
 
-        return insertedRfid;
+        return RfidDtoMapper.MapToDto(insertedRfid);
     }
 
-    public async Task<Core.Entities.Rfid> GetAsync(Guid id)
+    public async Task<RfidResponse> GetAsync(Guid id)
     {
         var rfid = await repository.GetAsync(id).ConfigureAwait(false);
-        return rfid;
+        return RfidDtoMapper.MapToDto(rfid);
     }
 }
