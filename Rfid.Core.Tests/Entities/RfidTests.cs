@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Inc.TestSupport;
 using Shouldly;
 
@@ -17,6 +18,12 @@ public sealed class RfidTests
     {
         // GIVEN WHEN
         var rfid = new Core.Entities.Rfid();
+
+        // THEN
+        rfid.ShouldSatisfyAllConditions(
+            () => rfid.Id.ShouldNotBe(Guid.Empty),
+            () => rfid.ValidFrom.ShouldBeNull(),
+            () => rfid.ValidTo.ShouldBeNull());
     }
 
     [Fact]
@@ -47,14 +54,13 @@ public sealed class RfidTests
     }
 
     [Fact]
-    internal void GIVEN_NoValidTo_WHEN_RfidConstructed_THEN_ValidToIsSetToCurrentDate()
+    internal void GIVEN_ValidToIsInPast_WHEN_RfidConstructed_THEN_ValidToIsSetToCurrentDate()
     {
-        // GIVEN WHEN
-        var rfid = new Core.Entities.Rfid(Guid.NewGuid());
+        // GIVEN
+        var validFrom = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(-1));
 
         // THEN
-        rfid.ValidFrom.ShouldNotBeNull();
-        rfid.ValidFrom.Value.ShouldBe(DateOnly.FromDateTime(DateTime.UtcNow));
+        Should.Throw<ArgumentOutOfRangeException>(() => new Core.Entities.Rfid(Guid.NewGuid(), validFrom));
     }
 
     [Fact]

@@ -18,13 +18,17 @@ public sealed class Rfid
 
     private void SetValidity(DateOnly? validFrom, DateOnly? validTo)
     {
-        ValidFrom = validFrom ?? DateOnly.FromDateTime(DateTime.UtcNow);
-        
-        if(validTo is not null && validTo <= ValidFrom)
+        if(validFrom is not null && validFrom < DateOnly.FromDateTime(DateTime.UtcNow))
         {
-            throw new ArgumentOutOfRangeException($"{nameof(validTo)} must be after {nameof(validFrom)}.");
+            throw new ArgumentOutOfRangeException(nameof(validFrom), $"{nameof(validTo)} must not be in past.");
         }
 
+        if(validTo is not null && validTo <= validFrom)
+        {
+            throw new ArgumentOutOfRangeException(nameof(validTo), $"{nameof(validTo)} must be after {nameof(validFrom)}.");
+        }
+
+        ValidFrom = validFrom;
         ValidTo = validTo;
     }
 
