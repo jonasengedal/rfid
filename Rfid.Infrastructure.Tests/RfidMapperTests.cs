@@ -22,9 +22,10 @@ public sealed class RfidMapperTests
         var rfidEntity = RfidMapper.MapToEntity(rfid);
 
         // THEN
-        rfidEntity.Id.ShouldBe(rfid.Id.ToString());
-        rfidEntity.ValidFrom.ShouldBe(rfid.ValidFrom);
-        rfidEntity.ValidTo.ShouldBe(rfid.ValidTo);
+        rfidEntity.ShouldSatisfyAllConditions(
+            () => rfidEntity.Id.ShouldBe(rfid.Id.ToString()),
+            () => rfidEntity.ValidFrom.ShouldBe(rfid.ValidFrom),
+            () => rfidEntity.ValidTo.ShouldBe(rfid.ValidTo));
     }
 
     [Fact]
@@ -37,9 +38,10 @@ public sealed class RfidMapperTests
         var rfid = RfidMapper.MapToDomain(rfidEntity);
 
         // THEN
-        rfid.Id.ToString().ShouldBe(rfidEntity.Id);
-        rfid.ValidFrom.ShouldBe(rfidEntity.ValidFrom);
-        rfid.ValidTo.ShouldBe(rfidEntity.ValidTo);
+        rfid.ShouldSatisfyAllConditions(
+            () => rfid.Id.ToString().ShouldBe(rfidEntity.Id),
+            () => rfid.ValidFrom.ShouldBe(rfidEntity.ValidFrom),
+            () => rfid.ValidTo.ShouldBe(rfidEntity.ValidTo));
     }
 
     // TODO: test unhappy paths
