@@ -11,6 +11,8 @@ builder.Services
     .AddRfidCosmosDbRepository();
 builder.ConfigureFunctionsWebApplication();
 
+// TODO: Add Exception middleware
+
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services
 //     .AddApplicationInsightsTelemetryWorkerService()
