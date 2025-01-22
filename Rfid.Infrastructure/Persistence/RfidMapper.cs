@@ -2,9 +2,9 @@
 
 internal partial class RfidMapper
 {
-    public static RfidEntity MapToEntity(Core.Entities.Rfid rfid)
+    public static RfidCosmosItem MapToEntity(Core.Entities.Rfid rfid)
     {
-        return new RfidEntity
+        return new RfidCosmosItem
         {
             Id = rfid.Id.ToString(),
             ValidFrom = rfid.ValidFrom,
@@ -12,7 +12,7 @@ internal partial class RfidMapper
         };
     }
 
-    public static Core.Entities.Rfid MapToDomain(RfidEntity insertedRfid)
+    public static Core.Entities.Rfid MapToDomain(RfidCosmosItem insertedRfid)
     {
         return new Core.Entities.Rfid
         (

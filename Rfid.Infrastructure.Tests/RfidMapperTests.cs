@@ -32,7 +32,7 @@ public sealed class RfidMapperTests
     internal void GIVEN_RfidEntity_WHEN_MapToDomain_THEN_RfidIsReturned()
     {
         // GIVEN
-        var rfidEntity = testContext.Create<RfidEntity>();
+        var rfidEntity = testContext.Create<RfidCosmosItem>();
 
         // WHEN
         var rfid = RfidMapper.MapToDomain(rfidEntity);

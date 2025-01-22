@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Inc.Azure.CosmosDb.TestSupport.Fakes;
 
-internal sealed class CosmosDbRepositoryFake<TItem> : ICosmosDbRepository<TItem> where TItem : IEntity
+internal sealed class CosmosDbRepositoryFake<TItem> : ICosmosDbRepository<TItem> where TItem : ICosmosItem
 {
     private readonly ConcurrentBag<string> storage = [];
 

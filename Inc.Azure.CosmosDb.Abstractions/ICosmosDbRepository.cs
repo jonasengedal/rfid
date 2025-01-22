@@ -2,7 +2,7 @@
 
 // Could have used https://github.com/IEvangelist/azure-cosmos-dotnet-repository instead
 // but wanted to show use of TestSupport project with Fake implementation of ICosmosRepository
-public interface ICosmosDbRepository<TItem> where TItem : IEntity
+public interface ICosmosDbRepository<TItem> where TItem : ICosmosItem
 {
     /// <summary>
     /// Get an item of type <typeparamref name="TItem"/> from Cosmos.

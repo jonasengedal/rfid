@@ -4,7 +4,7 @@ using Microsoft.Azure.Cosmos;
 using Rfid.Core.Interfaces;
 
 namespace Rfid.Infrastructure.Persistence;
-internal class RfidCosmosDbRepository(ICosmosDbRepository<RfidEntity> cosmosDbRepository) : IRfidRepository
+internal class RfidCosmosDbRepository(ICosmosDbRepository<RfidCosmosItem> cosmosDbRepository) : IRfidRepository
 {
     public async Task<Core.Entities.Rfid> GetAsync(Guid id)
     {

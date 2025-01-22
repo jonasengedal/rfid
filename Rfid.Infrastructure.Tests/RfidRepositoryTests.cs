@@ -11,7 +11,7 @@ public sealed class RfidRepositoryTests
 {
     private readonly TestContext _testContext;
     private readonly IRfidRepository rfidRepository;
-    private readonly ICosmosDbRepository<RfidEntity> repository;
+    private readonly ICosmosDbRepository<RfidCosmosItem> repository;
 
 
     public RfidRepositoryTests()
@@ -23,7 +23,7 @@ public sealed class RfidRepositoryTests
             );
 
         rfidRepository = _testContext.Resolve<IRfidRepository>();
-        repository = _testContext.Resolve<ICosmosDbRepository<RfidEntity>>();
+        repository = _testContext.Resolve<ICosmosDbRepository<RfidCosmosItem>>();
     }
 
     [Fact]

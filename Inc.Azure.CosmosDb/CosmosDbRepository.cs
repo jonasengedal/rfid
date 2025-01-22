@@ -4,7 +4,7 @@ using Microsoft.Azure.Cosmos;
 namespace Rfid.Infrastructure.Persistence.CosmosDb;
 
 internal sealed class CosmosDbRepository<TItem>(CosmosDbContainerProvider containerProvider) : ICosmosDbRepository<TItem>
-    where TItem : IEntity
+    where TItem : ICosmosItem
 {
     public async Task<TItem> GetAsync(string id, string? partitionKey = null)
     {
