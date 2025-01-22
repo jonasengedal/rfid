@@ -65,6 +65,6 @@ public sealed class RfidTests
         var validTo = validFrom.AddDays(-1);
 
         // WHEN
-        Should.Throw<ArgumentException>(() => new Core.Entities.Rfid(Guid.NewGuid(), validFrom, validTo));
+        Should.Throw<ArgumentOutOfRangeException>(() => new Core.Entities.Rfid(Guid.NewGuid(), validFrom, validTo));
     }
 }
