@@ -1,3 +1,3 @@
 # RFID case
 
-I have decided to focus on Onion Architecture
+The RFID case is quite over engineered just to show possible implementation of Clean Architecture.
