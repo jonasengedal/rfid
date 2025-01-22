@@ -718,6 +718,9 @@
           "Newtonsoft.Json": "[13.0.3, )"
         }
       },
+      "inc.sharedkernel": {
+        "type": "Project"
+      },
       "rfid.core": {
         "type": "Project",
         "dependencies": {
