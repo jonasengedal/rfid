@@ -30,7 +30,7 @@ public sealed class RfidRepositoryTests
     internal async Task GIVEN_ValidRfid_WHEN_AddAsync_THEN_RfidIsSaved()
     {
         // GIVEN
-        var inputRfid = _testContext.Create<Core.Entities.Rfid>();
+        var inputRfid = new Core.Entities.Rfid();
 
         // WHEN
         var addedRfid = await rfidRepository.InsertAsync(inputRfid);
