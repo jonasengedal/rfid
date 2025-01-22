@@ -4,7 +4,7 @@ using Rfid.Core.Interfaces;
 using Rfid.Infrastructure.TestSupport.Fakes;
 using Shouldly;
 
-namespace Rfid.Application.Tests;
+namespace Rfid.Application.Tests.Services;
 
 public sealed class RfidServiceTests
 {
